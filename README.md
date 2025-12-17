@@ -18,7 +18,7 @@ Think of it like this: Instead of one central kitchen making all the food, each 
 
 ---
 
-## 🎯 What You'll Learn
+## 🎯 What You'll get
 
 By exploring this repo, you'll see:
 
