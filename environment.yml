@@ -1,0 +1,51 @@
+name: data-mesh-dev
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  # Core Python
+  - python=3.10
+  
+  # PySpark for running pipelines
+  - pyspark=3.4.1
+  
+  # Data processing libraries
+  - pandas=2.0.3
+  - numpy=1.24.3
+  
+  # Delta Lake support
+  - pip
+  - pip:
+      - delta-spark==2.4.0
+  
+  # Data validation and quality
+  - pyyaml=6.0
+  - jsonschema=4.19.0
+  
+  # Code quality and linting
+  - flake8=6.1.0
+  - black=23.7.0
+  - pylint=2.17.5
+  
+  # Testing (optional but recommended)
+  - pytest=7.4.0
+  - pytest-cov=4.1.0
+  
+  # Jupyter for interactive development (optional)
+  - jupyter=1.0.0
+  - jupyterlab=4.0.5
+  
+  # Development utilities
+  - ipython=8.14.0
+  - requests=2.31.0
+
+# Additional notes:
+# This environment provides everything needed to:
+# 1. Run PySpark pipelines locally (bronze.py, silver.py, gold.py)
+# 2. Run governance validation scripts (validate_products.py, validate_schemas.py)
+# 3. Develop and test new data products
+# 4. Lint and format Python code
+# 5. Work with Jupyter notebooks for exploration
+#
+# For production Databricks deployment, the cluster will have its own runtime.
+# This is purely for local development and testing.
