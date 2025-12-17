@@ -6,6 +6,9 @@ dependencies:
   # Core Python
   - python=3.10
   
+  # Java 11 (required for PySpark compatibility)
+  - openjdk=11
+  
   # PySpark for running pipelines
   - pyspark=3.4.1
   
