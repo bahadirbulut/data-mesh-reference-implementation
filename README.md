@@ -1,4 +1,4 @@
-# Data Mesh Reference Implementation (Portfolio)
+# Data Mesh Reference Implementation (DEMO)
 
 **Author:** Bahadir Bulut — Nexence CommV  
 **Location:** Belgium (EU)  
