@@ -30,7 +30,7 @@ By exploring this repo, you'll see:
 
 ---
 
-## 🏗️ Repository Structure (Step-by-Step)
+## 🏗️ Repository Structure
 
 ```
 data-mesh-reference-implementation/
