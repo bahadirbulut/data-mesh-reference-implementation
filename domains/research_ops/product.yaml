@@ -1,0 +1,38 @@
+name: research-experiments
+domain: research_ops
+owner:
+  team: Research Operations
+  email: research-ops@example.com
+description: >
+  Domain-owned experiments dataset used for daily experiments reporting and operational analytics.
+
+inputs:
+  - name: raw_experiments_csv
+    description: "Daily CSV drops from operational system"
+
+outputs:
+  - name: research_experiments_daily
+    layer: gold
+    format: delta
+    description: "Daily experiment metrics aggregated per day"
+    contract: contracts/experiments_v1.schema.json
+    version: v1
+
+sla:
+  freshness: "daily 01:00 Europe/Brussels"
+  availability: "99.5%"
+  support_hours: "business-hours"
+
+quality:
+  expectations:
+    - "experiment_id is unique in silver"
+    - "trial_count > 0"
+    - "success_rate >= 0"
+
+privacy:
+  pii: false
+
+platform_dependencies:
+  storage: "ADLS Gen2 (bronze/silver/gold)"
+  compute: "Databricks Jobs (job clusters)"
+  observability: "Log Analytics + diagnostic settings"

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "sales_orders_daily_v1",
+  "type": "object",
+  "properties": {
+    "order_date": { "type": "string", "description": "YYYY-MM-DD" },
+    "daily_revenue": { "type": "number" }
+  },
+  "required": ["order_date", "daily_revenue"],
+  "additionalProperties": false
+}

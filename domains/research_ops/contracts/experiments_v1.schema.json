@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "research_experiments_daily_v1",
+  "description": "Daily aggregated experiment metrics for research operations",
+  "type": "object",
+  "properties": {
+    "experiment_date": {
+      "type": "string",
+      "description": "Date of experiment in YYYY-MM-DD format",
+      "format": "date",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    },
+    "total_trials": {
+      "type": "number",
+      "description": "Total number of trials conducted on this date",
+      "minimum": 1
+    },
+    "successful_trials": {
+      "type": "number",
+      "description": "Number of successful trials",
+      "minimum": 0
+    },
+    "success_rate": {
+      "type": "number",
+      "description": "Success rate as decimal between 0 and 1",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "avg_duration_minutes": {
+      "type": "number",
+      "description": "Average experiment duration in minutes",
+      "minimum": 0
+    }
+  },
+  "required": [
+    "experiment_date",
+    "total_trials",
+    "successful_trials",
+    "success_rate",
+    "avg_duration_minutes"
+  ],
+  "additionalProperties": false
+}

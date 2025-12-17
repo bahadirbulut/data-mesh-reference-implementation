@@ -1,0 +1,5 @@
+experiment_id,experiment_date,trial_count,success,duration_minutes,researcher_id
+EXP001,2025-01-01,50,true,42,R001
+EXP002,2025-01-01,50,true,48,R002
+EXP003,2025-01-01,50,false,35,R001
+EXP004,2025-01-01,50,true,52,R003

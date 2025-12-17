@@ -1,0 +1,5 @@
+order_id,order_date,customer_id,product,quantity,unit_price,currency
+1001,2025-01-01,C001,Laptop,1,1200,EUR
+1002,2025-01-01,C002,Mouse,2,25,EUR
+1003,2025-01-01,C001,Keyboard,1,75,EUR
+1003,2025-01-01,C001,Keyboard,1,75,EUR

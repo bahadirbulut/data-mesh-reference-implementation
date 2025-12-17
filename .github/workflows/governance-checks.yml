@@ -1,0 +1,14 @@
+name: Governance checks
+
+on:
+  pull_request:
+  push:
+    branches: [ main ]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run product metadata checks
+        run: python governance/checks/validate_products.py

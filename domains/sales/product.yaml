@@ -1,0 +1,39 @@
+name: sales-orders
+domain: sales
+owner:
+  team: Sales Analytics
+  email: sales-analytics@example.com
+
+description: >
+  Domain-owned orders dataset used for daily revenue reporting and operational analytics.
+
+inputs:
+  - name: raw_orders_csv
+    description: "Daily CSV drops from operational system"
+
+outputs:
+  - name: sales_orders_daily
+    layer: gold
+    format: delta
+    description: "Daily revenue aggregates per day"
+    contract: contracts/sales_orders_v1.schema.json
+    version: v1
+
+sla:
+  freshness: "daily 01:00 Europe/Brussels"
+  availability: "99.5%"
+  support_hours: "business-hours"
+
+quality:
+  expectations:
+    - "order_id is unique in silver"
+    - "quantity > 0"
+    - "unit_price >= 0"
+
+privacy:
+  pii: false
+
+platform_dependencies:
+  storage: "ADLS Gen2 (bronze/silver/gold)"
+  compute: "Databricks Jobs (job clusters)"
+  observability: "Log Analytics + diagnostic settings"
